@@ -1,0 +1,94 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN */
+
+.container {
+    width: 70%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* DEBUG */
+    background-color: antiquewhite;
+}
+
+.items {
+    width: 100%;
+    height: 600px;
+    /* DEGUB */
+    background-color: lightblue;
+}
+
+.item {
+    height: 100%;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* thumb */
+
+.thumbs {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* DEBUG */
+    background-color: black;
+}
+
+.thumb {
+    width: calc(100% / 5);
+    height: 100%;
+    opacity: 0.5;
+    /* DEBUG */
+    border: 1px solid red;
+}
+
+.thumbs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb.active {
+    border: 2px solid lightgrey;
+    opacity: 1;
+}
+
+.back,.next {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: 0.5;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.back {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.thumbs i {
+    font-size: 20px;
+    opacity: 1;
+}
