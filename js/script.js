@@ -1,5 +1,14 @@
-// Creare un carosello come nella foto allegata. Attenzione! Le immagini nello screenshot sono differenti da quelli  che vi invio, ma il layout non cambia.
+// Creare un carosello come nella foto allegata.
 
+// Milestone 1:
+// usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
+// Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo.
+
+/**Svolgimento Milestone 1
+ * Creo una funzione per stampare le immagini dell'array images nel carosello
+ * 
+ */
+ 
 const images = [
     {
         image: 'img/01.webp',
@@ -24,6 +33,39 @@ const images = [
     }
 ];
 
-// Milestone 1:
-// usiamo l’array di oggetti letterali per popolare dinamicamente il carosello.
-// Al click dell'utente sulle frecce verso sinistra o destra, l'immagine attiva diventerà visibile e dovremo aggiungervi titolo e testo.
+const itemsContainer = document.querySelector(".items");
+const thumbsContainer = document.querySelector(".thumbs");
+console.log(itemsContainer, thumbsContainer);
+
+printImages();
+
+// FUNCTIONS
+
+/**
+ * Description: stampa il contenuto dell'array images
+ */
+function printImages() {
+    for (let i = 0; i < images.length; i++ ) {
+        const thisImage = images[i];
+
+        // stampa gli item
+        itemsContainer.innerHTML += `
+        <div class="item active">
+            <div class="text-item">
+                <h1>${thisImage.title}</h1>
+                <p>
+                    ${thisImage.text}
+                </p>
+            </div>
+            <img src="img/${thisImage.image}" alt="">
+        </div>
+        `;
+
+        // stampa i thumb
+        thumbsContainer.innerHTML += `
+        <div class="thumb active">
+            <img src="img/${thisImage.image}" alt="">
+        </div>
+        `;
+    }
+}

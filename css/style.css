@@ -5,7 +5,15 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 /* MAIN */
+main {
+    max-width: 1400px;
+    
+}
 
 .container {
     width: 70%;
@@ -28,12 +36,33 @@
 
 .item {
     height: 100%;
+    position: relative;
+    display: none; !important
+}
+
+.text-item {
+    padding: 10px;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    position: absolute;
+    right: 20px;
+    
+}
+
+.text-item p {
+    text-align: end;
 }
 
 .item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.item.active {
+    display: block;
 }
 
 /* thumb */
